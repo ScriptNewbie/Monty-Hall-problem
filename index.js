@@ -14,9 +14,11 @@ const zeroToTwoArray = [0, 1, 2];
 const getRandomNumberBetweenZeroAnd = (something) =>
   Math.floor(Math.random() * something);
 
+//Well not always loosing in that variant
 const revealOneLoosing = (winningPosition, playerPick) => {
   const availablePicks = zeroToTwoArray.filter(
-    (i) => i !== winningPosition && i !== playerPick
+    //(i) => i !== winningPosition && i !== playerPick
+    (i) => i !== playerPick
   );
   const pick = getRandomNumberBetweenZeroAnd(availablePicks.length);
   return availablePicks[pick];
